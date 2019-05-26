@@ -176,10 +176,12 @@ class VimStateIndicator(wx.Frame):
         if color_name:
             color = GetColorMap(color_name)
             self.geekey.key_buttons['v'].SetBackgroundColour( color )
+            self.geekey.key_buttons['v'].Refresh()
 
             self.text.SetBackgroundColour( color )
             self.text_input.SetBackgroundColour( color )
             self.panel.SetBackgroundColour( color )
+            self.Refresh()
             pass
         pass
 
@@ -424,7 +426,7 @@ class Vim:
         self.executing = False
         self.indicator.StateReset(lt('executing {0}',Key) )
         cont = GetRegister(Key) 
-        print('cont =',cont)
+        #print('cont =',cont)
         if not cont: return False
         mapvalue = cont.split(':') # :0:_x~0.1:x~0.2
         if len(mapvalue)>=3:
@@ -604,11 +606,11 @@ class Vim:
             if self.commands[0]: self.commands = [''] + self.commands
             self.indicator.StateReset(":")
         elif oper == 'record':
-            print('record command',self.record,self.recording)
+            #print('record command',self.record,self.recording)
             if self.record: # is recording state, try stop recording
-                print('stop recording')
+                #print('stop recording')
                 res = self.geekey.endRecording()
-                print( 'vim recording res =',self.record,res )
+                #print( 'vim recording res =',self.record,res )
                 if res:
                     res = ":0{0}".format(res)
                     SetRegister(self.record, res, )   
