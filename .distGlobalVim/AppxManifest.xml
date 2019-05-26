@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="OVO.LTD.GlobalVim" 
+            Version="3.0.0.0" 
+            Publisher="CN=OVO.LTD, O=OVO.LTD, L=Xian, S=Shaanxi, C=CN" />
+  <Properties>
+    <DisplayName>GlobalVim</DisplayName>
+    <PublisherDisplayName>OVO.LTD</PublisherDisplayName>
+    <Logo>images\logo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>10.0</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="en-us" />
+    <Resource Language="zh-cn" />
+  </Resources>
+  <Applications>
+    <Application Id="GlobalVim" StartPage="default.html">
+      <VisualElements DisplayName="GlobalVim" Description="A vim can working global"
+           Logo="images\logo.png" SmallLogo="images\logo.png"  
+           ForegroundText="dark" BackgroundColor="#FFFFFF">
+         <SplashScreen Image="images\logo.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+</Package>

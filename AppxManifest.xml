@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+         xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2"
+         xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+         xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+         xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+         xmlns:rescap3="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3"
+         xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
+         xmlns:desktop2="http://schemas.microsoft.com/appx/manifest/desktop/windows10/2"
+         xmlns:desktop3="http://schemas.microsoft.com/appx/manifest/desktop/windows10/3"
+         xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"
+         xmlns:wincap3="http://schemas.microsoft.com/appx/manifest/foundation/windows10/windowscapabilities/3"
+         IgnorableNamespaces="uap4 wincap3 rescap3 desktop2 desktop3 com">
+  <Identity Name="27723C49D927A.GlobalVim" ProcessorArchitecture="x86" Publisher="CN=AC4DF275-59C4-4264-9C2A-EEE4ECD84302" Version="3.1.2.0" />
+  <Properties>
+    <DisplayName>GlobalVim/GeeKey</DisplayName>
+    <PublisherDisplayName>OVO.LTD</PublisherDisplayName>
+    <Logo>logo.png</Logo>
+  </Properties>
+  <Resources>
+    <Resource Language="en-us" />
+    <Resource Language="zh-cn" />
+    <!-- <Resource uap:Scale="100" /> -->
+    <!-- <Resource uap:Scale="125" /> -->
+    <!-- <Resource uap:Scale="150" /> -->
+    <!-- <Resource uap:Scale="200" /> -->
+    <!-- <Resource uap:Scale="400" /> -->
+  </Resources>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.17763.503" />
+  </Dependencies>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+    <!-- <Capability Name="internetClient" /> -->
+  </Capabilities>
+  <Applications>
+    <Application Id="GlobalVim" Executable="globalvim.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements DisplayName="GlobalVim" Description="27723C49D927A.GlobalVim" BackgroundColor="transparent" Square150x150Logo="logo150x150.png" Square44x44Logo="logo71x71.png">
+        <uap:DefaultTile Wide310x150Logo="logo310x150.png" Square310x310Logo="logo310x310.png" Square71x71Logo="logo71x71.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+</Package>

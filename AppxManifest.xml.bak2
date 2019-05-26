@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+	 >
+  <Identity Name="GlobalVim" 
+	    Version="3.1.1.0" 
+	    Publisher="CN=AC4DF275-59C4-4264-9C2A-EEE4ECD84302" 
+	    />
+
+
+  <Properties>
+    <DisplayName>GlobalVim</DisplayName>
+    <PublisherDisplayName>OVO.LTD</PublisherDisplayName>
+    <Logo>logo.png</Logo>
+  </Properties>
+
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>10.0.17763</OSMaxVersionTested>
+  </Prerequisites>
+
+  <Resources>
+    <Resource Language="en-us" />
+    <Resource Language="zh-cn" />
+  </Resources>
+
+  <Applications>
+    <Application Id="GlobalVim" Executable="GlobalVim.exe" EntryPoint="GlobalVim.App">
+      <VisualElements DisplayName="GlobalVim" Description="global vim keybinding and functions"
+		      Logo="logo.png" SmallLogo="logo.png"  
+		      ForegroundText="dark" BackgroundColor="#FFFFFF">
+	<SplashScreen Image="logo.png" />
+      </VisualElements>
+      <Extensions>
+      </Extensions>
+    </Application>
+  </Applications>
+</Package>

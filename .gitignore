@@ -1,0 +1,14 @@
+*.nsi
+*.zip
+*.exe
+*.bat
+sign/
+images/
+image2*
+config/
+doc/
+dist/
+__pycache__/
+build
+*.spec
+tmp
