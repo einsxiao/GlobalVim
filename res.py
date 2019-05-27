@@ -513,7 +513,7 @@ vim_move_count ={
 
 GlobalMaps['layout'] = {'':'',}
 
-ToolTipKeys = {'space','tab','q','v',}
+ToolTipKeys = {'space','q','v',}
 
 def GetMap( cat, key):
     if not cat in GlobalMaps: return ''
@@ -563,7 +563,7 @@ Color_Map ={
     'vim normal':'#ebffb3',
     'vim insert':'#b3baff',
     'vim visual':'#eab3ff',
-    'vim text':'#fff',
+    'vim text':'#111111',
     'keyboard_panel':'#4a708b',
     'bottom_panel':'#698b69',
     '':'',

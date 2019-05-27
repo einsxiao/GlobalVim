@@ -5,7 +5,7 @@ import requests
 import importlib
 import shutil
 from res import *
-from AutoComplete import *
+#from AutoComplete import *
 from Configure import *
 from Tutorial import *
 from Vim import *
@@ -138,7 +138,7 @@ class GeeKeyFrame(wx.Frame):
         self.layout_file_name = 'default.ini'
         self.dictfile = os.path.join( self.data_dir, 'dict.dat')
 
-        self.GeeKeyKeys = ['caps lock']
+        self.GeeKeyKeys = ['`','\\']
         self.geekey_mode = 'longblock'
         self.key_types = ['text','macro','edit','function']
 
@@ -162,8 +162,8 @@ class GeeKeyFrame(wx.Frame):
 
         self.stateVarInit()
 
-        self.autoComplete = AutoComplete( parent,self,self.dictfile )
-        self.autoComplete.StateReset()
+        #self.autoComplete = AutoComplete( parent,self,self.dictfile )
+        #self.autoComplete.StateReset()
         self.vim = Vim(parent,self)
         self.image_size = 100
         self.images = [None]*self.image_size
@@ -229,8 +229,8 @@ class GeeKeyFrame(wx.Frame):
         if self.getConfig('startvim') == 'True':
             self.vim.state_switch('on')
         # auto-complete
-        if self.getConfig('startautocomplete') == 'True':
-            self.autoComplete.SwitchState('on')
+        # if self.getConfig('startautocomplete') == 'True':
+        #     self.autoComplete.SwitchState('on')
 
         ####
         self.initing = False
@@ -263,7 +263,7 @@ class GeeKeyFrame(wx.Frame):
         self.vim.Destroy() 
 
         self.taskBarIcon.Destroy()
-        self.autoComplete.Destroy()
+        #self.autoComplete.Destroy()
 
         self.Destroy()
         pass
@@ -668,7 +668,7 @@ class GeeKeyFrame(wx.Frame):
         self.config[ 'startup' ] = 'False'
         self.config[ 'runasadmin' ]  = 'False'
         #self.config[ 'startshow' ] = 'True'
-        self.config[ 'startautocomplete' ] = 'False'
+        #self.config[ 'startautocomplete' ] = 'False'
         self.config[ 'startvim' ] = 'False'
         self.config[ 'doubleclickfix' ] = 'False'
         self.config[ 'language' ] = getdefaultlocale()[0]
@@ -1345,9 +1345,10 @@ class GeeKeyFrame(wx.Frame):
                 KeyMap[ Key ] = evt.KeyID
                 pass
 
-            DealAutoComplete = lambda Key: self.autoComplete.GetInput(
-                EvtType, Key, False, self.state_on_shift, self.state_on_ctrl, self.state_on_alt
-            )
+            #DealAutoComplete = lambda Key: True
+            # DealAutoComplete = lambda Key: self.autoComplete.GetInput(
+            #     EvtType, Key, False, self.state_on_shift, self.state_on_ctrl, self.state_on_alt
+            # )
             IsKeyDown = lambda : EvtType == 'key down' or EvtType == 'key sys down'
             IsKeyUp = lambda : EvtType == 'key up' or EvtType == 'key sys up'
 
@@ -1400,14 +1401,14 @@ class GeeKeyFrame(wx.Frame):
                     self.state_is_spacing = False
                     self.RaiseShow()
                     return False
-                if Key == 'tab' and not self.number_string:
-                    if IsKeyUp(): return False
-                    #print('switch autocomplete')
-                    self.number_string = ''
-                    self.state_is_spacing = False
-                    #self.vim.indicator.StateReset('disable')
-                    self.autoComplete.SwitchState()
-                    return False
+                # if Key == 'tab' and not self.number_string:
+                #     if IsKeyUp(): return False
+                #     #print('switch autocomplete')
+                #     self.number_string = ''
+                #     self.state_is_spacing = False
+                #     #self.vim.indicator.StateReset('disable')
+                #     self.autoComplete.SwitchState()
+                #     return False
                 #print('move on to do other things,if numbering, cancel spacing')
                 if self.number_string and not self.state_is_spacing_twice:
                     #print('cancel spacing for ther is number string',Key)
@@ -1477,7 +1478,7 @@ class GeeKeyFrame(wx.Frame):
                 if Key in ('backspace','delete','up','down','page up','page down'):
                     if self.vim.vim_on and not self.vim.insert_mode:
                         return self.vim.ProcessKey(Key,EvtType)
-                    return DealAutoComplete(Key) 
+                    return True #DealAutoComplete(Key) 
                 self.vim.caret.StateReset()
                 return True
             elif Key == 'Packet':
@@ -1497,8 +1498,8 @@ class GeeKeyFrame(wx.Frame):
                     self.number_string = ''
                     self.state_is_spacing = False
                     self.vim.caret.StateReset()
-                    if self.autoComplete.PopupActive():
-                        self.autoComplete.StateReset()
+                    # if self.autoComplete.PopupActive():
+                    #     self.autoComplete.StateReset()
 
                     if self.vim.vim_on: #in every mode esc will reset completely
                         # record last time, double press esc in 1sec will send normal esc 
@@ -1537,7 +1538,7 @@ class GeeKeyFrame(wx.Frame):
                 if IsKeyDown(): self.vim.caret.StateReset()
                 if self.vim.vim_on and not self.vim.insert_mode:
                     return self.vim.ProcessKey(Key,EvtType)
-                return DealAutoComplete(Key)
+                return True #DealAutoComplete(Key)
                 #######################
 
             ###################################################

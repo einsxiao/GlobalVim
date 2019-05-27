@@ -227,8 +227,8 @@ class ConfigDialog( wx.Dialog):
         # self.addText( lt('') )
         # self.addCheckBox('startshow',lt('_startshow') )
 
-        self.addText( lt('') )
-        self.addCheckBox('startautocomplete',lt('_start_autocomplete') )
+        #self.addText( lt('') )
+        #self.addCheckBox('startautocomplete',lt('_start_autocomplete') )
 
         self.addText( lt('') )
         self.addCheckBox('startvim',lt('_startvim') )

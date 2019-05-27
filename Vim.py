@@ -10,7 +10,7 @@ class VimCaret(wx.Frame):
 
         self.normal_size = (8,1)
         self.small_size = (3,2)
-        wx.Frame.__init__(self,parent,wx.NewId(),"Caret",
+        wx.Frame.__init__(self,None,wx.NewId(),"Caret",
                           size = self.normal_size,
                           style=wx.STAY_ON_TOP|wx.FRAME_NO_TASKBAR|wx.NO_BORDER|
                           wx.FRAME_TOOL_WINDOW
@@ -71,7 +71,7 @@ class VimStateIndicator(wx.Frame):
         self.size = (0,0)
         self.timer = None
 
-        wx.Frame.__init__(self,parent,wx.NewId(),"Indicator",
+        wx.Frame.__init__(self,None,wx.NewId(),"Indicator",
                           size = self.size,
                           style=wx.STAY_ON_TOP|wx.FRAME_NO_TASKBAR|wx.NO_BORDER|
                           wx.FRAME_TOOL_WINDOW
@@ -314,7 +314,7 @@ class Vim:
         # self.recording = False
         # self.record = ''
         self.play_ratio = 0
-        self.geekey.autoComplete.StateReset()
+        #self.geekey.autoComplete.StateReset()
         self.indicator.StateReset()
         self.caret.StateReset()
         pass
@@ -524,7 +524,8 @@ class Vim:
             # append to command
             return True
 
-        if ( Key in ('home','end','page up','page down','left','right','up','down','delete','backspace','return') ):
+        #if ( Key in ('home','end','page up','page down','left','right','up','down','delete','backspace','return')  ):
+        if ( not Key in StringKeys and not Key in ('space',)  ):
             return True
         
         ### always ignore key up for none input keys

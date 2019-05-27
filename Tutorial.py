@@ -135,8 +135,8 @@ class TutorialDialog( wx.Dialog):
         self.addText( lt('_quick_text/app') )
         self.addContText( lt('_quick_text/app_cont'), GetMap('color','text_key'),1.8 )
 
-        self.addText( lt('_auto_complete') )
-        self.addContText( lt('_auto_complete_cont'), GetMap('color','function_key') )
+        # self.addText( lt('_auto_complete') )
+        # self.addContText( lt('_auto_complete_cont'), GetMap('color','function_key') )
 
         self.addText( lt('_panel_quickkey') )
         self.addContText( lt('_panel_quickkey_cont'), GetMap('color','function_button') )
