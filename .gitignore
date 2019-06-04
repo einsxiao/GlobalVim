@@ -12,3 +12,10 @@ __pycache__/
 build
 *.spec
 tmp
+*.py
+*.xml
+*.appx
+*.swp
+*.bak2
+*.bak
+*.pfx
