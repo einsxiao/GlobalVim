@@ -1,7 +1,6 @@
 # GlobalVim
 
-最新版本号： v3.2.1.0
-[微软应用商店获取](https://www.microsoft.com/store/apps/9PDQ9H0CVLMS)
+二进制打包版本 v3.2.1.0 [微软应用商店获取](https://www.microsoft.com/store/apps/9PDQ9H0CVLMS)
 
 
 GlobalVim能让您在任意环境下使用vim模式编辑。强大易用的GeeKey热键方案能提供丰富灵活的键盘定制和键盘编程能力，让您从从容处理大量的重复输入/操作。
