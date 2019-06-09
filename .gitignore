@@ -18,3 +18,8 @@ tmp
 *.bak2
 *.bak
 *.pfx
+*.csv
+*.log
+*.pyc
+Assets/
+.distGlobalVim/
