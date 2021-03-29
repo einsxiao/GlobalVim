@@ -33,7 +33,7 @@ Pillow==6.0.0
 pkginfo==1.5.0.1
 pluggy==0.11.0
 py==1.8.0
-Pygments==2.4.0
+Pygments==2.7.4
 PyHook3==1.6.1
 PyInstaller==3.4
 pylint==2.3.1
